@@ -145,14 +145,6 @@ ggplot(data=all_trips_v2, mapping=aes(x=day_of_week, y=tripduration, color=membe
 # STEP 5: EXPORT SUMMARY FILE FOR FURTHER ANALYSIS
 #=================================================
 # Create a csv file that we will visualize in Excel, Tableau, or my presentation software
-avg_ride_length <- aggregate(all_trips_v2$tripduration ~ all_trips_v2$member_casual +
-                      all_trips_v2$day_of_week, FUN = mean)
-write.csv(avg_ride_length, file = 'avg_ride_length.csv')
-
-median_ride_length <- aggregate(all_trips_v2$tripduration ~ all_trips_v2$member_casual + 
-                      all_trips_v2$day_of_week, FUN = median)
-write.csv(median_ride_length, file = 'median_ride_length.csv')
-
 write.csv(summary_table, file = 'summary_table.csv')
 
 write.csv(all_trips_v2, file = 'all_trips_v2.csv')
